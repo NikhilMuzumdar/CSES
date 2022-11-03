@@ -1,0 +1,23 @@
+# https://cses.fi/problemset/task/1090
+
+inp_1 = [int(el) for el in input().split(' ')]
+inp_2 = [int(el) for el in input().split(' ')]
+ 
+(n_children, weight_limit) = (inp_1[0], inp_1[1])
+weights = sorted(inp_2)
+ 
+gandola = 0
+(p, q) = (0, n_children-1)
+ 
+while p <= q:
+    if weights[p] + weights[q] <= weight_limit:
+        gandola += 1
+        # print(f"Gandola {gandola}: {weights[p]} & {weights[q]}")
+        p += 1
+        q -= 1
+    else:
+        gandola += 1
+        # print(f"Gandola {gandola}: {weights[q]}")
+        q -= 1
+ 
+print(gandola)
