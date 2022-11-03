@@ -1,0 +1,26 @@
+# https://cses.fi/problemset/task/1084/
+
+(n_app, n_flats, delta) = (int(el) for el in input().split(' '))
+req_sizes = sorted([int(el) for el in input().split(' ')])
+act_sizes = sorted([int(el) for el in input().split(' ')])
+
+allotted_count = 0
+
+(req, act) = (0, 0)
+
+while req < n_app and act < n_flats:
+    # if the flat is in range
+    if req_sizes[req] - delta <= act_sizes[act] <= req_sizes[req] + delta:
+        allotted_count += 1
+        req += 1
+        act += 1
+
+    # if the flat is too big, move to the next applicant
+    elif req_sizes[req] + delta < act_sizes[act]:
+
+        req += 1
+    # if the flat is too small, move to the next flat
+    else:
+        act += 1
+
+print(allotted_count)
