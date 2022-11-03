@@ -1,0 +1,15 @@
+# https://cses.fi/problemset/task/1094/
+
+length = int(input())
+numbers = [int(n) for n in input().split(" ")]
+ 
+ 
+MOVE = 0
+ 
+for i in range(1, len(numbers)):
+    if numbers[i-1] > numbers[i]:
+        diff = numbers[i-1] - numbers[i]
+        numbers[i] += diff
+        MOVE += diff
+ 
+print(MOVE)
