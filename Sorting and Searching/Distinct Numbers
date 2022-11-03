@@ -1,0 +1,10 @@
+# https://cses.fi/problemset/task/1621/
+
+length = int(input())
+numbers = [int(n) for n in input().split(" ")]
+ 
+nset = set()
+for n in numbers:
+  nset.add(n)
+ 
+print(len(nset))
