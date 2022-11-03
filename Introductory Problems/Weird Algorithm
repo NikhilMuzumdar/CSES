@@ -1,0 +1,14 @@
+# https://cses.fi/problemset/task/1068/
+
+hl = []
+inp = int(input())
+hl.append(inp)
+while inp !=1:
+  if inp % 2 == 0:
+    inp = inp / 2
+  else:
+    inp = 3*inp + 1
+    
+  hl.append(int(inp))
+ 
+print(*hl)
