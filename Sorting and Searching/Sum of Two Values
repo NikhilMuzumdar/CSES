@@ -1,0 +1,15 @@
+import sys
+(length, target) = (int(el) for el in input().split())
+values = [int(el) for el in input().split()]
+
+hold = {} # this dict will hold the values that we already searched with it's index+1
+for i, v in enumerate(values):
+    # i is the index and v is the value in values
+    # print(i,v)
+    if target-v in hold:
+        print(i+1, hold[target-v])
+        sys.exit(0)
+
+    hold[v] = i+1
+
+print('IMPOSSIBLE')
